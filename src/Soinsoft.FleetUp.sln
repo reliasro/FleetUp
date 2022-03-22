@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Application.Business", "Soinsoft.FleetUp.Application.Business\Soinsoft.FleetUp.Application.Business.csproj", "{9ADD3A0A-F804-408C-AE27-74077428D55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Application.Contracts", "Soinsoft.FleetUp.Application.Contracts\Soinsoft.FleetUp.Application.Contracts.csproj", "{52004879-CF5C-4863-BE24-66F2A8C7E464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Domain.Contracts", "Soinsoft.FleetUp.Domain.Contracts\Soinsoft.FleetUp.Domain.Contracts.csproj", "{F9D888CA-64CE-4163-B3A7-94CD00EEDDA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Domain.Entities", "Soinsoft.FleetUp.Domain.Entities\Soinsoft.FleetUp.Domain.Entities.csproj", "{374EEEE1-F142-4B3E-AD7B-718DC9EDFEAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Infra.Persistence", "Soinsoft.FleetUp.Infra.Persistence\Soinsoft.FleetUp.Infra.Persistence.csproj", "{C0706EAD-76D4-44F0-B3E4-06D76F4FC091}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soinsoft.FleetUp.Presentation.WebAPI", "Soinsoft.FleetUp.Presentation.WebAPI\Soinsoft.FleetUp.Presentation.WebAPI.csproj", "{7A78F420-CEE8-4930-BD3F-C01B1CEE3596}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ADD3A0A-F804-408C-AE27-74077428D55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADD3A0A-F804-408C-AE27-74077428D55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADD3A0A-F804-408C-AE27-74077428D55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADD3A0A-F804-408C-AE27-74077428D55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52004879-CF5C-4863-BE24-66F2A8C7E464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52004879-CF5C-4863-BE24-66F2A8C7E464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52004879-CF5C-4863-BE24-66F2A8C7E464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52004879-CF5C-4863-BE24-66F2A8C7E464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9D888CA-64CE-4163-B3A7-94CD00EEDDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D888CA-64CE-4163-B3A7-94CD00EEDDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D888CA-64CE-4163-B3A7-94CD00EEDDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D888CA-64CE-4163-B3A7-94CD00EEDDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374EEEE1-F142-4B3E-AD7B-718DC9EDFEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374EEEE1-F142-4B3E-AD7B-718DC9EDFEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374EEEE1-F142-4B3E-AD7B-718DC9EDFEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374EEEE1-F142-4B3E-AD7B-718DC9EDFEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0706EAD-76D4-44F0-B3E4-06D76F4FC091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0706EAD-76D4-44F0-B3E4-06D76F4FC091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0706EAD-76D4-44F0-B3E4-06D76F4FC091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0706EAD-76D4-44F0-B3E4-06D76F4FC091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A78F420-CEE8-4930-BD3F-C01B1CEE3596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A78F420-CEE8-4930-BD3F-C01B1CEE3596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A78F420-CEE8-4930-BD3F-C01B1CEE3596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A78F420-CEE8-4930-BD3F-C01B1CEE3596}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

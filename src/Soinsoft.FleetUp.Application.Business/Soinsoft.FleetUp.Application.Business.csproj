@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Soinsoft.FleetUp.Application.Contracts\Soinsoft.FleetUp.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Soinsoft.FleetUp.Domain.Contracts\Soinsoft.FleetUp.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\Soinsoft.FleetUp.Domain.Entities\Soinsoft.FleetUp.Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
