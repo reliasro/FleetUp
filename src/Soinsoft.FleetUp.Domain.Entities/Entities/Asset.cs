@@ -17,6 +17,7 @@ namespace Soinsoft.FleetUp.Domain.Entities
         public string Year { get; set; }
         public string Color { get; set; }
         public DateTime CreatedOn { get; set; }
+        public IEnumerable<Schedule> Schedules { get; set; }
 
     }
 }

@@ -4,12 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Soinsoft.FleetUp.Domain.Contracts;
 using Soinsoft.FleetUp.Domain.Entities;
+using Soinsoft.FleetUp.Infra.Persistence.Data;
 
 namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 {
     public class AssetRepository : IAssetRepository
     {
- 
+        private readonly FleetUpDbContext _context;
+        public AssetRepository(FleetUpDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task Delete(Asset entity)
         {
             await Task.Run(()=>Console.Write("temporal holder"));
@@ -30,12 +36,12 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 
         public async Task Insert(Asset entity)
         {
-           await Task.Run(()=>Console.Write("temporal holder"));
+           await _context.Assets.AddAsync(entity);
         }
 
         public async Task SaveAsync()
         {
-            await Task.Run(()=>Console.Write("temporal holder"));
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(Asset entity)

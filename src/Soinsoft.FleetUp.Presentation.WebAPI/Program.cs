@@ -1,6 +1,7 @@
 using System;
 using Soinsoft.FleetUp.Infra.Persistence.Container;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

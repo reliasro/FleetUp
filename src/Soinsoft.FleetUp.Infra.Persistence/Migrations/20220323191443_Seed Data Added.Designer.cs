@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Soinsoft.FleetUp.Infra.Persistence.Data;
 
@@ -10,9 +11,10 @@ using Soinsoft.FleetUp.Infra.Persistence.Data;
 namespace Soinsoft.FleetUp.Infra.Persistence.Migrations
 {
     [DbContext(typeof(FleetUpDbContext))]
-    partial class FleetUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220323191443_Seed Data Added")]
+    partial class SeedDataAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");

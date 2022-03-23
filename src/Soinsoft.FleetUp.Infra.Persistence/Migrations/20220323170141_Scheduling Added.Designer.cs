@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Soinsoft.FleetUp.Infra.Persistence.Data;
 
@@ -10,9 +11,10 @@ using Soinsoft.FleetUp.Infra.Persistence.Data;
 namespace Soinsoft.FleetUp.Infra.Persistence.Migrations
 {
     [DbContext(typeof(FleetUpDbContext))]
-    partial class FleetUpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220323170141_Scheduling Added")]
+    partial class SchedulingAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
@@ -50,92 +52,6 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Assets");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Production",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "A55-522",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Sales Department",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "F5588",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Employees",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "QE-5426",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For CEO",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "W690001",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Transporting",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "PA-59977",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Production 2",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "DO1005",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Color = "Blue",
-                            CreatedOn = new DateTime(2022, 3, 23, 0, 0, 0, 0, DateTimeKind.Local),
-                            CurrentValue = 555m,
-                            Description = "For Events",
-                            Make = "Honda",
-                            Model = "Masda",
-                            VIN = "AF97-23",
-                            Year = "2020"
-                        });
                 });
 
             modelBuilder.Entity("Soinsoft.FleetUp.Domain.Entities.AssetInfo", b =>
@@ -208,35 +124,6 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Maintenances");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EstimatedCost = 2500m,
-                            MilesToExecuteTask = 5000,
-                            TaskDetails = "Replace",
-                            Title = "Change Tires",
-                            ToolsNeeded = "ToolBox A357"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EstimatedCost = 500m,
-                            MilesToExecuteTask = 5000,
-                            TaskDetails = "Replace",
-                            Title = "Change Oil",
-                            ToolsNeeded = "ToolBox Q977"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EstimatedCost = 350m,
-                            MilesToExecuteTask = 5000,
-                            TaskDetails = "Review",
-                            Title = "Check Engine",
-                            ToolsNeeded = "ToolBox D-1002"
-                        });
                 });
 
             modelBuilder.Entity("Soinsoft.FleetUp.Domain.Entities.MaintenanceInfo", b =>
@@ -276,80 +163,6 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Migrations
                     b.HasIndex("AssetId");
 
                     b.ToTable("Schedule");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AssetId = 1,
-                            MaintenanceId = 3
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AssetId = 1,
-                            MaintenanceId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AssetId = 1,
-                            MaintenanceId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AssetId = 2,
-                            MaintenanceId = 3
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AssetId = 3,
-                            MaintenanceId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            AssetId = 4,
-                            MaintenanceId = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            AssetId = 5,
-                            MaintenanceId = 2
-                        },
-                        new
-                        {
-                            Id = 8,
-                            AssetId = 5,
-                            MaintenanceId = 3
-                        },
-                        new
-                        {
-                            Id = 9,
-                            AssetId = 6,
-                            MaintenanceId = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            AssetId = 7,
-                            MaintenanceId = 3
-                        },
-                        new
-                        {
-                            Id = 11,
-                            AssetId = 7,
-                            MaintenanceId = 2
-                        },
-                        new
-                        {
-                            Id = 12,
-                            AssetId = 7,
-                            MaintenanceId = 1
-                        });
                 });
 
             modelBuilder.Entity("Soinsoft.FleetUp.Domain.Entities.WorkOrder", b =>

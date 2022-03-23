@@ -18,10 +18,18 @@ namespace Soinsoft.FleetUp.Application.Business.Features.Asset.Commands.Create
             this.assetRepo = assetRepo;
         }
 
-        public Task<int> Handle(CreateAssetCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateAssetCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
-            // await assetRepo.SaveAsync();
+           try
+           {
+              await assetRepo.SaveAsync();
+           }
+           catch (System.Exception)
+           {
+               
+               return 0;
+           }  
+           return 1; 
         }
     }
 }
