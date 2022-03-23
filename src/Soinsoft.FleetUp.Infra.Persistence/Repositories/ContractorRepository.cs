@@ -10,9 +10,9 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
     public class ContractorRepository : IContractorRepository
     {
    
-        public void Delete(Contractor entity)
+        public async Task Delete(Contractor entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
 
         public Contractor Get()
@@ -20,24 +20,27 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Contractor> GetAll()
+        public async Task<IEnumerable<Contractor>> GetAll()
         {
-            throw new NotImplementedException();
+             return await Task.Run(()=>
+            {
+              return new List<Contractor>();
+            });
         }
 
-        public void Insert(Contractor entity)
+        public async Task Insert(Contractor entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
 
-        public int SaveAsync()
+        public async Task SaveAsync()
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
 
-        public void Update(Contractor entity)
+        public async Task Update(Contractor entity)
         {
-            throw new NotImplementedException();
+           await Task.Run(()=>Console.Write("temporal holder"));
         }
     }
 }

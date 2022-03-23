@@ -10,9 +10,9 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
     public class AssetRepository : IAssetRepository
     {
  
-        public void Delete(Asset entity)
+        public async Task Delete(Asset entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
 
         public Asset Get()
@@ -20,24 +20,27 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Asset> GetAll()
+        public async Task<IEnumerable<Asset>> GetAll()
         {
-            throw new NotImplementedException();
+             return await Task.Run(()=>
+            {
+              return new List<Asset>();
+            });
         }
 
-        public void Insert(Asset entity)
+        public async Task Insert(Asset entity)
         {
-            throw new NotImplementedException();
+           await Task.Run(()=>Console.Write("temporal holder"));
         }
 
-        public int SaveAsync()
+        public async Task SaveAsync()
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
 
-        public void Update(Asset entity)
+        public async Task Update(Asset entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(()=>Console.Write("temporal holder"));
         }
     }
 }

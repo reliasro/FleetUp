@@ -7,14 +7,8 @@ using Soinsoft.FleetUp.Domain.Entities.Interfaces;
 
 namespace Soinsoft.FleetUp.Domain.Contracts
 {
-    public interface IRepository<T> where T: IAggregate
+    public interface IWorkOrderRepository:IRepository<WorkOrder>, IAggregate
     {
-        Task<IEnumerable<T>> GetAll();
-        T Get();
-        Task Insert(T entity);
-        Task Update(T entity);
-        Task Delete(T entity);
-        Task SaveAsync();
-
+        
     }
 }
