@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Soinsoft.FleetUp.Domain.Contracts;
 using Soinsoft.FleetUp.Domain.Entities;
 using Soinsoft.FleetUp.Infra.Persistence.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 {
     public class ContractorRepository : IContractorRepository
     {
         private readonly FleetUpDbContext _context;
+        private  Contractor entity;
 
         public ContractorRepository(FleetUpDbContext context)
         {
@@ -18,37 +20,41 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
   
         }
 
-        public async Task Delete(Contractor entity)
+        public void Delete(Contractor entity)
         {
-            await Task.Run(()=>Console.Write("temporal holder"));
+            this.entity=entity;
+            var item = _context.Contractors.
+            Where(p=> p.Id==entity.Id).SingleOrDefault();
+            _context.Contractors.Remove(item);
         }
 
-        public Contractor Get()
+        public async Task<Contractor> GetById(int Id)
         {
-            throw new NotImplementedException();
+            return await (_context.Contractors.
+            Where(p=> p.Id==Id)).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Contractor>> GetAll()
+        public async Task<List<Contractor>> GetAll()
         {
-             return await Task.Run(()=>
-            {
-              return new List<Contractor>();
-            });
+             return await _context.Contractors.ToListAsync();
         }
 
         public async Task Insert(Contractor entity)
         {
+            this.entity=entity;
             await _context.Contractors.AddAsync(entity);
         }
 
-        public async Task SaveAsync()
+        public async Task<int> SaveAsync()
         {
             await _context.SaveChangesAsync();
+            return this.entity.Id;
         }
 
-        public async Task Update(Contractor entity)
+        public void Update(Contractor entity)
         {
-           await Task.Run(()=>Console.Write("temporal holder"));
+           this.entity=entity;
+           _context.Entry(entity).State=EntityState.Modified;
         }
     }
 }

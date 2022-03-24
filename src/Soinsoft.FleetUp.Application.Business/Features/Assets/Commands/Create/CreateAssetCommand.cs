@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Soinsoft.FleetUp.Domain.Entities.Interfaces;
+using MediatR;
 
-namespace Soinsoft.FleetUp.Domain.Entities
+namespace Soinsoft.FleetUp.Application.Business.Features.Assets.Commands.Create
 {
-    public class Asset:IAggregate
+    public class CreateAssetCommand: IRequest<int>
     {
-        public int Id { get; set; }
         public string VIN { get; set; }
         public string Description { get; set; }
         public decimal CurrentValue { get; set; }
@@ -16,6 +15,6 @@ namespace Soinsoft.FleetUp.Domain.Entities
         public string Make { get; set; }
         public string Year { get; set; }
         public string Color { get; set; }
-        public DateTime CreatedOn { get; set; }
     }
+    
 }

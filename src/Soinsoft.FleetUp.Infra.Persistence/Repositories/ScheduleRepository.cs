@@ -7,24 +7,24 @@ using Soinsoft.FleetUp.Domain.Entities;
 
 namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 {
-    public class WorkOrderRepository : IWorkOrderRepository
+    public class ScheduleRepository : IScheduleRepository
     {
-        public void Delete(WorkOrder entity)
+        public void Delete(Schedule entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<WorkOrder>> GetAll()
+        public Task<List<Schedule>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Task<WorkOrder> GetById(int Id)
+        public Task<Schedule> GetById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public Task Insert(WorkOrder entity)
+        public Task Insert(Schedule entity)
         {
             throw new NotImplementedException();
         }
@@ -34,7 +34,7 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update(WorkOrder entity)
+        public void Update(Schedule entity)
         {
             throw new NotImplementedException();
         }

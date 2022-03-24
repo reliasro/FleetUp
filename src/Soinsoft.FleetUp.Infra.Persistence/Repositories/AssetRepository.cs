@@ -5,48 +5,55 @@ using System.Threading.Tasks;
 using Soinsoft.FleetUp.Domain.Contracts;
 using Soinsoft.FleetUp.Domain.Entities;
 using Soinsoft.FleetUp.Infra.Persistence.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 {
     public class AssetRepository : IAssetRepository
     {
         private readonly FleetUpDbContext _context;
+        private  Asset entity;
         public AssetRepository(FleetUpDbContext context)
         {
             _context = context;
         }
 
-        public async Task Delete(Asset entity)
+        public void Delete(Asset entity)
         {
-            await Task.Run(()=>Console.Write("temporal holder"));
+            this.entity=entity;
+            var item = _context.Assets.SingleOrDefault(p=> p.Id==entity.Id);
+            if (item!=null){
+                _context.Assets.Remove(item);
+            }
         }
 
-        public Asset Get()
+        public async Task<Asset> GetById(int Id)
         {
-            throw new NotImplementedException();
+            var item = await (_context.Assets.Where(p=> p.Id==Id)).FirstOrDefaultAsync();
+            return item;
         }
 
-        public async Task<IEnumerable<Asset>> GetAll()
+        public async Task<List<Asset>> GetAll()
         {
-             return await Task.Run(()=>
-            {
-              return new List<Asset>();
-            });
+             return await _context.Assets.ToListAsync();
         }
 
         public async Task Insert(Asset entity)
         {
-           await _context.Assets.AddAsync(entity);
+           this.entity=entity;
+            await _context.Assets.AddAsync(entity);
         }
 
-        public async Task SaveAsync()
+        public async Task<int> SaveAsync()
         {
             await _context.SaveChangesAsync();
+            return this.entity.Id;
         }
 
-        public async Task Update(Asset entity)
+        public void Update(Asset entity)
         {
-            await Task.Run(()=>Console.Write("temporal holder"));
+            this.entity=entity;
+            _context.Entry(entity).State=EntityState.Modified;
         }
     }
 }

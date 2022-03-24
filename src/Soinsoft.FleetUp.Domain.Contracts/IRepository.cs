@@ -9,12 +9,12 @@ namespace Soinsoft.FleetUp.Domain.Contracts
 {
     public interface IRepository<T> where T: IAggregate
     {
-        Task<IEnumerable<T>> GetAll();
-        T Get();
+        Task<List<T>> GetAll();
+        Task<T> GetById(int Id);
         Task Insert(T entity);
-        Task Update(T entity);
-        Task Delete(T entity);
-        Task SaveAsync();
+        void Update(T entity);
+        void Delete(T entity);
+        Task<int> SaveAsync();
 
     }
 }

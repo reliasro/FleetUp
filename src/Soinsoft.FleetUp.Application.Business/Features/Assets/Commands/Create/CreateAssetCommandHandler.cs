@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Soinsoft.FleetUp.Domain.Contracts;
+using Soinsoft.FleetUp.Domain.Entities;
 
-namespace Soinsoft.FleetUp.Application.Business.Features.Asset.Commands.Create
+namespace Soinsoft.FleetUp.Application.Business.Features.Assets.Commands.Create
 {
     public class CreateAssetCommandHandler : IRequestHandler<CreateAssetCommand, int>
     {
@@ -22,14 +23,22 @@ namespace Soinsoft.FleetUp.Application.Business.Features.Asset.Commands.Create
         {
            try
            {
+             await assetRepo.Insert(new Asset(){
+                VIN=request.VIN,
+                Description=request.Description,
+                CurrentValue=request.CurrentValue,
+                Model=request.Model,
+                Make=request.Make,
+                Year=request.Year,
+                Color=request.Color
+              });
               await assetRepo.SaveAsync();
+              return 1;
            }
            catch (System.Exception)
            {
-               
-               return 0;
+              return 0;
            }  
-           return 1; 
         }
     }
 }
