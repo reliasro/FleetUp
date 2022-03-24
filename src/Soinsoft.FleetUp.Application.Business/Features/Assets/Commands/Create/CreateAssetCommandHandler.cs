@@ -32,12 +32,11 @@ namespace Soinsoft.FleetUp.Application.Business.Features.Assets.Commands.Create
                 Year=request.Year,
                 Color=request.Color
               });
-              await assetRepo.SaveAsync();
-              return 1;
+             return await assetRepo.SaveAsync();
            }
-           catch (System.Exception)
+           catch (System.Exception e)
            {
-              return 0;
+              throw new Exception("An error occurred at Create Asset...",e);
            }  
         }
     }

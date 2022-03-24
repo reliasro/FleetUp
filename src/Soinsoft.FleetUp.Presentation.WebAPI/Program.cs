@@ -12,7 +12,7 @@ FleetUpServices.Register(builder.Services, builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(typeof(CreateAssetCommand)); //Location of handlers
+builder.Services.AddMediatR(typeof(CreateAssetCommand)); //Location of commands
 
 var app = builder.Build();
 

@@ -29,7 +29,8 @@ namespace Soinsoft.FleetUp.Infra.Persistence.Repositories
 
         public async Task<Asset> GetById(int Id)
         {
-            var item = await (_context.Assets.Where(p=> p.Id==Id)).FirstOrDefaultAsync();
+            var item = await (_context.Assets.
+            Where(p=> p.Id==Id)).FirstOrDefaultAsync();
             return item;
         }
 
