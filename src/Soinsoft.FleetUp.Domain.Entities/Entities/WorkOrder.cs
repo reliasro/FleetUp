@@ -19,5 +19,6 @@ namespace Soinsoft.FleetUp.Domain.Entities
         public int ContractorID { get; set; }
         public AssetInfo AssetInfo { get; set; }
         public MaintenanceInfo MaintenanceInfo { get; set; }
+        public List<WorkOrderMaterial> Materials { get; set; }
     }
 }
